@@ -30,6 +30,13 @@ export const query = graphql`
 			  frontmatter {
 				title
 				date
+				thumbnail {
+					childrenImageSharp {
+					  fluid(fit: COVER) {
+						  ...GatsbyImageSharpFluid
+					  }
+					}
+				}
 			  }
 			  fields {
 				slug
