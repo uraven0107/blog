@@ -15,7 +15,7 @@ function renderCard(node) {
 	const post = {
 		title: node.frontmatter.title,
 		date: node.frontmatter.date,
-		fixed: node.frontmatter.thumbnail.childrenImageSharp[0].fluid,
+		fluid: node.frontmatter.thumbnail.childrenImageSharp[0].fluid,
 		slug: node.fields.slug
 	}
 	return (
