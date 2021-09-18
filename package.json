@@ -1,6 +1,6 @@
 {
-  "name": "blog",
-  "description": "my blog",
+  "name": "uraven0107's blog",
+  "description": "blog made by Gatsby,tailwind",
   "version": "0.1.0",
   "scripts": {
     "build": "gatsby build",
