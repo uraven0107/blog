@@ -11,9 +11,9 @@ export default function PostLink( { post } ) {
 				<div>
 					<img src={RANDOM_IMG} alt="post-cover" className='object-cover h-36 w-full'></img>
 				</div>
-				<div className='h-48 p-2'>
-					<h2>{ post.title }</h2>
-					<p>{ post.date }</p>
+				<div className='p-2'>
+					<p className="text-lg">{ post.title }</p>
+					<p className="text-sm">{ post.date }</p>
 				</div>
 			</div>
 		</Link>

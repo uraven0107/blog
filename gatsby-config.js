@@ -19,6 +19,21 @@ module.exports = {
 				name: `posts`,
 			},
 		},
-		"gatsby-transformer-remark"
+		{
+		  resolve: `gatsby-transformer-remark`,
+		  options: {
+			plugins: [
+			  {
+				resolve: `gatsby-remark-classes`,
+				options: {
+				  classMap: {
+					"heading[depth=1]": "text-3xl mb-4 border-b border-gray-500",
+					"heading[depth=2]": "text-2xl mb-4 border-b border-gray-500",
+				  }
+				}
+			  }
+			]
+		  }
+		},
 	],
 }
