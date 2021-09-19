@@ -40,6 +40,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 		`
 	)
 
+	if (result.errors) {
+		reporter.warn(
+			'graphqlでエラーが発生しました。postsディレクトリにマークダウンファイルが存在していない可能性があります。'
+		)
+		errors.forEach(error => {
+			reporter.warn(error.message)
+		})
+		return
+	}
+
 	const { edges } = result.data.allMarkdownRemark
 
 	edges.forEach(edge => {

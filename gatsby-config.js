@@ -20,13 +20,6 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/src/images`,
-				name: `images`,
-			},
-		},
-		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
@@ -38,7 +31,8 @@ module.exports = {
 									'text-3xl mt-8 mb-4 border-b border-gray-300',
 								'heading[depth=2]':
 									'text-2xl mt-6 mb-4 border-b border-gray-300',
-								listItem: 'list-disc list-inside',
+								listItem: 'list-disc list-inside mt-1',
+								link: 'text-blue-600 visited:text-purple-600',
 							},
 						},
 					},
