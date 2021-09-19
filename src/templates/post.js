@@ -6,7 +6,7 @@ export default function Post({ pageContext }) {
 
 	return (
 		<Layout>
-			<div className="mx-14 p-2">
+			<div className="lg:mx-14 p-2">
 				<div className="my-8 border-l-2 border-gray-500 px-2">
 					<h1 className="text-4xl">{title}</h1>
 					<p className="text-sm">{date}</p>
