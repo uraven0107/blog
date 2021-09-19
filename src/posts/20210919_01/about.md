@@ -30,6 +30,13 @@ thumbnail: './thumbnail.png'
 
 -   [はてなぶろぐ](https://uraven0107.hatenablog.com)もあるのですがそっちの記事もそのうち移植しようと思っています。
 
-以下は画像のテストです。
+以下はテストです。
 
 ![てすと](./test.png)
+
+```
+func hoge() {
+	fmt.Print("hoge")
+}
+
+```
