@@ -1,20 +1,17 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Meta from '../components/meta'
 import PostLinks from '../components/post-links'
-import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 
 export default function Home({ data }) {
+	const metadata = {
+		title: data.site.siteMetadata.title,
+		description: data.site.siteMetadata.description,
+	}
 	return (
 		<Layout>
-			<Helmet>
-				<meta charSet="utf-8" />
-				<title>{data.site.siteMetadata.title}</title>
-				<meta
-					content={data.site.siteMetadata.description}
-					name="description"
-				/>
-			</Helmet>
+			<Meta metadata={metadata} />
 			<PostLinks data={data} />
 		</Layout>
 	)

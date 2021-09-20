@@ -22,6 +22,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	const result = await graphql(
 		`
 			{
+				site {
+					siteMetadata {
+						title
+						description
+					}
+				}
 				allMarkdownRemark {
 					edges {
 						node {
@@ -50,6 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 		return
 	}
 
+	const metadata = result.data.site.siteMetadata
 	const { edges } = result.data.allMarkdownRemark
 
 	edges.forEach(edge => {
@@ -57,6 +64,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			path: `/posts/${edge.node.fields.slug}/`,
 			component: path.resolve('./src/templates/post.js'),
 			context: {
+				metadata: metadata,
 				title: edge.node.frontmatter.title,
 				date: edge.node.frontmatter.date,
 				body: edge.node.html,
