@@ -4,9 +4,10 @@ import Meta from '../components/meta'
 
 export default function Post({ pageContext }) {
 	const { title, date, body } = pageContext
+	const brands = pageContext.metadata.brands
 
 	return (
-		<Layout>
+		<Layout brands={brands}>
 			<Meta metadata={pageContext.metadata} />
 			<div className="lg:mx-14 p-2">
 				<div className="my-8 border-l-2 border-gray-500 px-2">

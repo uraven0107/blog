@@ -26,6 +26,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 					siteMetadata {
 						title
 						description
+						brands {
+							name
+							link
+						}
 					}
 				}
 				allMarkdownRemark {
@@ -50,7 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 		reporter.warn(
 			'graphqlでエラーが発生しました。postsディレクトリにマークダウンファイルが存在していない可能性があります。'
 		)
-		errors.forEach(error => {
+		result.errors.forEach(error => {
 			reporter.warn(error.message)
 		})
 		return

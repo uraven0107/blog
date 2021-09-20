@@ -9,6 +9,16 @@ module.exports = {
 		title: "uraven0107's blog",
 		description: 'blog made by Gatsby,tailwind',
 		author: 'uraven0107',
+		brands: [
+			{
+				name: 'github',
+				link: 'https://github.com/uraven0107',
+			},
+			{
+				name: 'twitter',
+				link: 'https://twitter.com/uraven_t',
+			},
+		],
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',

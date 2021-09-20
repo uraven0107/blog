@@ -9,8 +9,9 @@ export default function Home({ data }) {
 		title: data.site.siteMetadata.title,
 		description: data.site.siteMetadata.description,
 	}
+	const brands = data.site.siteMetadata.brands
 	return (
-		<Layout>
+		<Layout brands={brands}>
 			<Meta metadata={metadata} />
 			<PostLinks data={data} />
 		</Layout>
@@ -23,6 +24,10 @@ export const query = graphql`
 			siteMetadata {
 				title
 				description
+				brands {
+					name
+					link
+				}
 			}
 		}
 		allMarkdownRemark {
